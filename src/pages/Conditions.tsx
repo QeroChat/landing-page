@@ -16,40 +16,50 @@ export default function Conditions() {
 
             <h2 id="gdpr">2. Zpracování osobních údajů (GDPR)</h2>
             <h3>2.1 Jaké údaje zpracováváme?</h3>
-            <p>Při zápisu do beta programu (formulář na webu) zpracováváme:</p>
+            <p>Zatím běží jen tento web a zápis do beta programu. Aplikace QeroChat ještě spuštěná není, proto údaje níže dělíme na ty, které zpracováváme už teď, a ty, které začneme zpracovávat až po spuštění aplikace.</p>
+            <p><b>Při návštěvě webu</b> (qero.chat a jeho subdomény):</p>
+            <ul>
+                <li><b>IP adresu a technické údaje požadavku</b> (čas, navštívená adresa, typ prohlížeče) - server je automaticky zapisuje do svých záznamů (logů). Slouží jen k ochraně proti útokům a zneužití (např. omezení počtu požadavků) a k řešení technických problémů.</li>
+            </ul>
+            <p><b>Při zápisu do beta programu</b> (formulář na webu) zpracováváme:</p>
             <ul>
                 <li><b>E-mail</b> - abychom vám mohli poslat potvrzení a pozvánku do aplikace.</li>
                 <li><b>Volbu zasílání novinek</b> - zda chcete dostávat e-maily o vývoji projektu.</li>
-                <li><b>Informace o souhlasu</b> - zda jste souhlasil s podmínkami, potvrdil, že splňujete nároky na věk a s jakou verzí podmínek jste souhlasil.</li>
+                <li><b>Informace o souhlasu</b> - že jste souhlasil s podmínkami a potvrdil splnění věkové hranice, s jakou verzí podmínek a kdy.</li>
             </ul>
-            <p>Při používání účtu v aplikaci se jedná o tyto údaje:</p>
+            <p>E-mail a souhlas s podmínkami jsou pro zápis do bety nutné, bez nich se zapsat nelze. Odběr novinek je nepovinný.</p>
+            <p><b>Když nám napíšete</b> na {SUPPORT_EMAIL} nebo zavoláte, zpracováváme vaši adresu či číslo a obsah zprávy, abychom vám mohli odpovědět.</p>
+            <p><b>Po spuštění aplikace</b> budeme při používání účtu zpracovávat tyto údaje:</p>
             <ul>
                 <li><b>E-mail</b> - slouží k identifikaci vlastníka účtu, v případě ztráty hesla a i jako prostředek k přidávání lidí do přátel v samotné aplikaci.</li>
                 <li><b>Jméno/Přezdívka</b> - slouží k identifikaci uživatele, tak aby všichni ostatní věděli, s kým si zrovna píšou.</li>
                 <li><b>Heslo</b> - slouží jako přístupový údaj k účtu. Heslo ukládáme jenom v hashované podobě a ani my se k jeho původní podobě nedostaneme.</li>
-                <li><b>IP adresu</b> - používáme ji jen krátkodobě v paměti serveru k ochraně proti zneužití (omezení počtu pokusů o přihlášení). Do databáze ani logů ji neukládáme.</li>
+                <li><b>IP adresu</b> - k ochraně proti zneužití (omezení počtu pokusů o přihlášení) a v serverových záznamech stejně jako u webu. Do databáze ji neukládáme.</li>
                 <li><b>Záznamy o činnosti účtu</b> - například registrace, přihlášení a změny účtu. Slouží k zabezpečení služby a k řešení incidentů.</li>
             </ul>
-            <p>Dále při běžném používání aplikace:</p>
+            <p>Dále při běžném používání aplikace (po jejím spuštění):</p>
             <ul>
                 <li><b>Profilová fotka</b> - slouží k odlišení vašeho účtu od ostatních. Není povinné nahrávat, pokud nic nenahrajete, systém využije předpřipravenou.</li>
                 <li><b>Bannerová fotka</b> - slouží k odlišení vašeho účtu od ostatních. Není povinné nahrávat, pokud nic nenahrajete, systém využije předpřipravenou.</li>
                 <li><b>Stav a textový status</b> - zda jste online a text, který si sami nastavíte. Vidí ho vaši přátelé v aplikaci.</li>
                 <li><b>Vámi vytvořený obsah</b> - v našem případě se jedná o vámi napsané zprávy v chatech, nahrané obrázky a informace o kanálech, které jste vytvořili.</li>
+                <li><b>Seznam přátel a blokovaných uživatelů</b> - aby aplikace věděla, s kým si můžete psát.</li>
             </ul>
+            <p>Nedochází k automatizovanému rozhodování ani profilování ve smyslu čl. 22 GDPR.</p>
 
             <h3>2.2 Právní základ zpracování</h3>
             <p>Zpracování vašich osobních údajů probíhá na základě následujících právních titulů:</p>
             <ul>
                 <li><b>Souhlas (čl. 6(1)(a) GDPR)</b> - zasílání e-mailů s novinkami (jen pokud jste ho zaškrtli).</li>
-                <li><b>Plnění smlouvy (čl. 6(1)(b) GDPR)</b> - zápis do bety a zaslání pozvánky, provoz účtu, autentizace, zasílání zpráv a dobrovolně nahrané profilové a bannerové fotky.</li>
-                <li><b>Oprávněný zájem (čl. 6(1)(f) GDPR)</b> - zajištění bezpečnosti služby, prevence zneužití, technická údržba a ochrana před útoky.</li>
+                <li><b>Plnění smlouvy (čl. 6(1)(b) GDPR)</b> - zápis do bety a zaslání pozvánky, po spuštění aplikace provoz účtu, autentizace, zasílání zpráv a dobrovolně nahrané profilové a bannerové fotky.</li>
+                <li><b>Oprávněný zájem (čl. 6(1)(f) GDPR)</b> - zajištění bezpečnosti webu a služby, prevence zneužití, technická údržba a ochrana před útoky (serverové záznamy), vyřizování vašich dotazů na podpoře a zachování smyslu konverzací ostatních uživatelů po smazání účtu (viz 2.3).</li>
             </ul>
 
             <h3>2.3 Doba uchování vašich dat</h3>
             <p>Údaje účtu ukládáme do doby, než požádáte o odstranění účtu.</p>
             <p>Zápis do beta programu (e-mail a volbu novinek) uchováváme do konce beta testu, nebo dokud nás nepožádáte o jeho smazání. Souhlas se zasíláním novinek můžete odvolat kdykoli a po odvolání vám je přestaneme posílat.</p>
-            <p>Záznamy o činnosti účtu uchováváme jen po dobu nezbytnou pro zabezpečení služby a pak je mažeme.</p>
+            <p>Serverové záznamy (logy) s IP adresou mažeme automaticky po 14 dnech.</p>
+            <p>Záznamy o činnosti účtu (po spuštění aplikace) mažeme po 90 dnech.</p>
             <p>E-maily, které nám pošlete na podporu, uchováváme po dobu vyřízení vaší žádosti a poté nejdéle 1 rok (kdyby se problém opakoval). Pak je mažeme.</p>
             <p>Pamatujte ale na jednu věc: když si smažete účet, vaše odeslané zprávy ve společných chatech zůstanou (aby dávala konverzace ostatním dál smysl). Váš profil od nich ale bude trvale odpojen a zobrazíte se u nich pouze jako „Smazaný uživatel“.</p>
             <p>V případě beta testu budou data smazána také tehdy, pokud se aplikace dočká oficiálního vydání. O této akci bychom vás však dostatečně předem upozornili pomocí e-mailu, nebo v samotné aplikaci.</p>
@@ -67,9 +77,9 @@ export default function Conditions() {
             <ul>
                 <li><b>Přístup:</b> kdykoliv si můžete vyžádat kopii vašich dat.</li>
                 <li><b>Opravu:</b> můžete chtít změnit své údaje a to i u těch, které nejsou snadno změnitelné v rozhraní aplikace.</li>
-                <li><b>Výmaz:</b> kdykoliv si můžete požádat odstranit všechna data, co o vás uschováváme.</li>
-                <li><b>Omezení zpracovávání:</b> máte právo "zmrazit" svá data. To znamená, že zůstanou na našich serverech, ale nebudou se zobrazovat v aplikaci a nebudeme s nimi činit žádné úkony.</li>
-                <li><b>Přenositelnost:</b> můžete požádat o zaslání všech dat, která o vás máme ve strojově čitelném formátu (nejčastěji .json). Včetně obrázků, které jste během používání služby nahráli.</li>
+                <li><b>Výmaz:</b> kdykoliv můžete požádat o smazání svých údajů. Smažeme vše, co nemusíme nebo nesmíme uchovat. Výjimkou jsou zprávy, které jste poslali do společných chatů (viz 2.3) - ty zůstanou bez vazby na váš profil.</li>
+                <li><b>Omezení zpracování:</b> v případech podle čl. 18 GDPR (např. když napadnete přesnost údajů) můžete požádat, abychom vaše údaje jen uchovávali a jinak s nimi do vyřešení věci nepracovali.</li>
+                <li><b>Přenositelnost:</b> údaje, které jste nám sami poskytli a které zpracováváme na základě souhlasu nebo smlouvy, vám na požádání pošleme ve strojově čitelném formátu (nejčastěji .json), po spuštění aplikace včetně nahraných obrázků.</li>
                 <li><b>Námitku (čl. 21 GDPR):</b> kdykoliv můžete vznést námitku proti zpracování, které provádíme na základě oprávněného zájmu (zabezpečení služby). Zpracování pak ukončíme, pokud nedoložíme závažné důvody, které převažují nad vašimi zájmy.</li>
                 <li><b>Odvolání souhlasu:</b> souhlas se zasíláním novinek můžete kdykoliv odvolat e-mailem. Odvolání nemá vliv na váš účet. Pokud chcete ukončit i účet, požádejte o jeho smazání (právo na výmaz).</li>
                 <li><b>Podání stížnosti:</b> máte právo podat stížnost u Úřadu pro ochranu osobních údajů (ÚOOÚ), pokud se domníváte, že zpracování vašich dat probíhá v rozporu se zákonem.</li>
@@ -77,7 +87,7 @@ export default function Conditions() {
 
             <h3>2.6 Jak mohu svá práva uplatnit?</h3>
             <p>Svá práva můžete uplatnit kontaktováním našeho týmu na e-mailu <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>. Pro ušetření našeho i vašeho času, vždy piště z e-mailu, který máte u účtu uvedený.</p>
-            <p>Na žádosti nejčastěji odpovídáme do 2 až 3 dnů, nejpozději však do zákonné lhůty 30 dnů.</p>
+            <p>Na žádosti nejčastěji odpovídáme do 2 až 3 dnů, nejpozději však do jednoho měsíce od jejich obdržení. Jen ve výjimečných případech (složitá žádost nebo velký počet žádostí) můžeme lhůtu prodloužit o další dva měsíce. O tom vás vždy informujeme do jednoho měsíce i s důvodem.</p>
             <p>Pokud by nastal případ, kdy by data musela být smazána manuálně, informujeme vás o tom a data smažeme také v této lhůtě.</p>
 
             <h3>2.7 Zabezpečení</h3>
@@ -94,7 +104,7 @@ export default function Conditions() {
             <p>Webová stránka qero.chat sama nic neukládá. Úložiště v aplikaci je technicky nezbytné pro její fungování (§ 89 odst. 3 zákona o elektronických komunikacích), a proto k němu váš souhlas nepotřebujeme.</p>
 
             <h3>2.9 Předávání mimo EU</h3>
-            <p>Naše servery běží přímo v České republice. E-mailový poskytovatel Mailgun nabízí evropský region, a tedy ani vaše e-maily neopouští EU. Schránka podpory u Seznam.cz je také v ČR. Jediná výjimka jsou náborové formuláře, které zpracovává společnost Google.</p>
+            <p>Naše servery běží přímo v České republice. E-maily přes Mailgun odesíláme z jeho evropského regionu. Mailgun je ale součástí mezinárodní skupiny se zázemím i v USA, a pokud by k údajům došlo k přístupu mimo EU, děje se tak jen se zárukami podle kapitoly V GDPR (standardní smluvní doložky, případně rámec EU-USA pro ochranu osobních údajů). Schránka podpory u Seznam.cz je také v ČR. Jediná výjimka jsou náborové formuláře, které zpracovává společnost Google.</p>
 
             <h3>2.10 Přihlášky do týmu</h3>
             <p>Pokud se hlásíte do našeho týmu, vyplňujete formulář služby <b>Google Forms</b>. Zpracováváme jen to, co do přihlášky sami napíšete (např. jméno nebo přezdívku, kontakt, informace o zkušenostech a odkazy na ukázky práce).</p>
@@ -113,7 +123,7 @@ export default function Conditions() {
 
             <h3>3.2 Kdo může službu používat?</h3>
             <p>Služba je tvořená primárně pro Čechy a Slováky, ale může ji používat prakticky kdokoliv, kdo neporušuje zákony své země ani zákony na ochranu dětí a mladistvých.</p>
-            <p>Souhlas se zpracováním osobních údajů můžete v ČR sami bez zákonných zástupců dát od 15+ let, na Slovensku od 16+, takže to jsou i věkové hranice pro tyto země. V ostatních zemích platí věková hranice podle místního práva, nejméně však 16 let. Pokud zjistíme, že tenhle věk nesplňujete a nemáte k tomu doložitelný souhlas rodičů, vyhrazujeme si právo takový účet okamžitě smazat.</p>
+            <p>Zapsat se do bety a používat službu můžete od 15 let v ČR a od 16 let na Slovensku. V ostatních zemích platí věková hranice podle místního práva, nejméně však 16 let. Mladší uživatelé mohou službu používat jen se souhlasem zákonného zástupce. Pokud zjistíme, že věkovou hranici nesplňujete a souhlas zákonného zástupce nemáte, vyhrazujeme si právo zápis nebo účet smazat.</p>
 
             <h3>3.3 Pravidla chování</h3>
             <p>V celé síti webů, které jsou spravovány pod doménou qero.chat musíte dodržovat zákony ČR a také námi stanovená pravidla, konkrétně se jedná o:</p>
@@ -132,7 +142,7 @@ export default function Conditions() {
             <p><b>3.3.13</b> Je zakázáno svůj účet dále přeprodávat, nebo předávat ostatním za účelem obcházení trestu, nebo za účelem obcházení omezeného přístupu beta verze.</p>
 
             <h3>3.4 Odpovědnost a záruky</h3>
-            <p>Služba je poskytovaná tak, „jak je". V rámci beta verze neručíme za případné výpadky, ztrátu dat či chyby z naší strany a ani za obsah tvořen uživateli.</p>
+            <p>Služba je poskytovaná tak, „jak je". V rámci beta verze a v rozsahu, který připouští právní předpisy, neodpovídáme za případné výpadky, ztrátu dat či chyby a ani za obsah tvořený uživateli. Tím nejsou dotčena vaše práva, která vám zákon zaručuje a která nelze smluvně vyloučit (např. odpovědnost za škodu způsobenou úmyslně nebo z hrubé nedbalosti).</p>
             <p>Za vše co u nás publikujete včetně (obrázků, profilových fotek, bannerů, samotných zpráv) nesete plnou odpovědnost vy. Neručíme za případné zneužití vámi nahraných dat.</p>
 
             <h3>3.5 Ukončení účtu</h3>
@@ -142,7 +152,7 @@ export default function Conditions() {
             <p>Vše od kódu po loga a texty patří nám. Tím, že nahrajete svoji profilovou fotku, banner, nebo ikonku chatu, nám dáváte bezúplatnou licenci tento obsah uložit a zobrazovat ostatním uživatelům, a to jen pro účely provozu služby a jen do doby, než ho smažete nebo zrušíte účet.</p>
 
             <h3>3.7 Změny podmínek</h3>
-            <p>Vyhrazujeme si právo podmínky kdykoliv změnit. Vás na to upozorníme prostřednictvím e-mailu, ale doporučujeme, abyste si sami udržovali pravidelný přehled.</p>
+            <p>Podmínky můžeme přiměřeně změnit. O změně vás upozorníme e-mailem alespoň 14 dní předem (u změn nutných ze zákona nebo kvůli bezpečnosti i dříve). Pokud se změnou nesouhlasíte, můžete ji odmítnout a zápis do bety nebo účet zrušit - stačí nám napsat na {SUPPORT_EMAIL}. Aktuální znění vždy najdete na této stránce.</p>
 
             <h3>3.8 Řešení sporů</h3>
             <p>Jakékoliv spory řešte zejména prostřednictvím e-mailové komunikace s námi. Tyto podmínky se řídí právem České republiky, a tak v případě nouze máte plné právo využít soudní cestu.</p>
