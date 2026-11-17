@@ -87,7 +87,7 @@ export default function Recruitment() {
                             <li>Online akce a teambuildingy</li>
                         </ul>
                     </div>
-                    <div className="card-footer">QeroChat/landing-pag
+                    <div className="card-footer">
                         <ApplyLink href={FORMS.moderator} />
                     </div>
                 </div>
