@@ -1,0 +1,25 @@
+* text=auto
+*.ts       text diff=typescript
+*.tsx      text diff=typescript
+*.js       text
+*.jsx      text
+*.json     text
+*.css      text
+*.scss     text
+*.html     text
+*.md       text
+*.yml      text
+*.yaml     text
+*.toml     text
+*.sh       text eol=lf
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.ico      binary
+*.svg      text
+*.webp     binary
+*.woff     binary
+*.woff2    binary
+*.ttf      binary
+*.eot      binary
