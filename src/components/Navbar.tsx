@@ -15,6 +15,7 @@ export default function Navbar() {
                 <div className="nav-links">
                     <Link to="/recruitment">Nábor</Link>
                     <a href="#funkce">Funkce</a>
+                    <a href="#ukazky">Ukázky</a>
                     <a href="#o-projektu">O projektu</a>
                     <a href="#team">Team</a>
                     <a href="#faq">FAQ</a>

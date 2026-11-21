@@ -1,7 +1,36 @@
-import { useState, useEffect, type FormEvent } from 'react';
+import { useState, useEffect, useCallback, useMemo, type FormEvent } from 'react';
+import Lightbox from '../components/Lightbox';
 import { SUPPORT_EMAIL, TERMS_VERSION } from '../legal';
 
 const TARGET_DATE = new Date('2026-11-28T18:00:00+01:00');
+const SHOTS = [
+    { src: '/pic2.png', w: 1320, h: 2868, alt: 'Ořezávání profilové fotky v aplikaci QeroChat', title: 'Profilovka podle tebe', text: 'Fotku si upravíš přímo v aplikaci.' },
+    { src: '/pic1.png', w: 1320, h: 2868, alt: 'Chat #pr*ce v aplikaci QeroChat', title: 'Více chatů s jedním člověkem', text: 'Rozděl své chaty podle toho, co v nich řešíte a tvořte přehlednou historii zpráv.' },
+    { src: '/pic3.png', w: 1320, h: 2868, alt: 'Nastavení profilu v aplikaci QeroChat', title: 'Upravení profilu', text: 'Nechybí změna profilovky, banneru, jména a to vše na jednom místě.' },
+];
+
+/* Hlavní ukázka: na desktopu uprostřed, na mobilu (posuvný pás) první */
+const MAIN_SHOT = 1;
+const MOBILE_SHOTS_QUERY = '(max-width: 760px)';
+
+/* Sleduje, jestli je okno v mobilní šířce (stejná hranice jako v CSS) */
+function useMediaQuery(query: string) {
+    const [matches, setMatches] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches);
+    useEffect(() => {
+        const mq = window.matchMedia(query);
+        const onChange = () => setMatches(mq.matches);
+        onChange();
+        mq.addEventListener('change', onChange);
+        // Pojistka: některé prostředí (emulace zařízení, starší WebView) událost change neposílají spolehlivě
+        window.addEventListener('resize', onChange);
+        return () => {
+            mq.removeEventListener('change', onChange);
+            window.removeEventListener('resize', onChange);
+        };
+    }, [query]);
+    return matches;
+}
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function Home() {
@@ -14,6 +43,18 @@ export default function Home() {
     const [agreeNews, setAgreeNews] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [message, setMessage] = useState<{ type: 'ok' | 'err' | ''; text: string }>({ type: '', text: '' });
+    const [shotIndex, setShotIndex] = useState<number | null>(null);
+    const closeShot = useCallback(() => setShotIndex(null), []);
+    const isMobileShots = useMediaQuery(MOBILE_SHOTS_QUERY);
+    // Pořadí v galerii i v náhledu je stejné, takže první fotka na mobilu je v náhledu „1 / 3“
+    const shots = useMemo(
+        () => isMobileShots
+            ? [SHOTS[MAIN_SHOT], ...SHOTS.filter((_, i) => i !== MAIN_SHOT)]
+            : SHOTS,
+        [isMobileShots],
+    );
+    // Při přechodu mezi mobilem a desktopem se pořadí změní – otevřený náhled zavřeme
+    useEffect(() => setShotIndex(null), [isMobileShots]);
 
     useEffect(() => {
         const tick = () => {
@@ -209,6 +250,25 @@ export default function Home() {
                     <div className="feature"><b>Tmavý i světlý režim</b><p>Prostředí pro noční dravce i ranní ptáky.</p></div>
                     <div className="feature"><b>Offline režim</b><p>Při výpadku se zprávy uloží a odešlou, až budeš zase online.</p></div>
                 </div>
+            </section>
+
+            <section id="ukazky">
+                <h2 className="section-title">Jak to <span>vypadá?</span></h2>
+                <p className="section-sub">Pár záběrů přímo z aplikace. Je to beta, takže se vzhled ještě může změnit.</p>
+                <div className="shots">
+                    {shots.map((shot, i) => (
+                        <figure key={shot.src} className={'shot' + (shot === SHOTS[MAIN_SHOT] ? ' shot-main' : '')}>
+                            <button type="button" className="phone" onClick={() => setShotIndex(i)} aria-label={'Zvětšit: ' + shot.title}>
+                                <img src={shot.src} alt={shot.alt} width={shot.w} height={shot.h} loading="lazy" decoding="async" />
+                            </button>
+                            <figcaption>
+                                <b>{shot.title}</b>
+                                <span>{shot.text}</span>
+                            </figcaption>
+                        </figure>
+                    ))}
+                </div>
+                <Lightbox images={shots} index={shotIndex} onClose={closeShot} onChange={setShotIndex} />
             </section>
 
             <section id="o-projektu">
